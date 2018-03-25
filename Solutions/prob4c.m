@@ -1,0 +1,13 @@
+[y, Fs] = audioread('handel.wav');
+[y2, Fs] = audioread('4a1.wav');
+[y3, Fs] = audioread('4a2.wav');
+[y4, Fs] = audioread('4a3.wav');
+y2 = y2(round(1:Fs/44100:size(y,1)));
+y3 = y3(round(1:Fs/44100:size(y,1)));
+y4 = y4(round(1:Fs/44100:size(y,1)));
+%res  = convn(double(y),double(y2));
+%res2 = convn(double(y),double(y3));
+res3 = convn(double(y),double(y4));
+%sound(res,44100);
+%sound(res2,44100);
+sound(res3,44100);
